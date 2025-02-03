@@ -1,0 +1,57 @@
+{
+  "career": [
+    {
+      "name": "triserv 360",
+      "href": "https://triserv360.com/",
+      "title": "Graduate Associate (SEED Programme)",
+      "logo": "/dbs.png",
+      "start": "Jul 2023",
+      "description": [
+        "Developed the Java backend for a bank account servicing process with multiple channel integrations using Activiti workflow",
+        "Built a custom database migration tool using Python and MariaDB and facilitated the migration of 1000+ processes from a vendor platform"
+      ]
+    },
+    {
+      "name": "Singapore Institute of Technology",
+      "href": "https://www.singaporetech.edu.sg",
+      "title": "Software Developer (Contract)",
+      "logo": "/sit.png",
+      "start": "Apr 2023",
+      "end": "Jun 2023",
+      "description": [
+        "Built NFTVue, a NFT gallery website that allows students to connect their crypto wallets to view and verify their school event-issued NFTs",
+        "Worked on DemoConstruct, a full-stack web application (React + Python) that uses Meshroom to reconstruct 3D models from captured images"
+      ],
+      "links": [
+        {
+          "name": "NFTVue",
+          "href": "https://nftvue.vercel.app",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
+      "name": "DBS Bank",
+      "href": "https://www.dbs.com.sg",
+      "title": "Software Developer (Intern)",
+      "logo": "/dbs.png",
+      "start": "May 2022",
+      "end": "Dec 2022",
+      "description": [
+        "Worked on the backend for the digital exchange and asset custody application using Spring Boot and Java",
+        "Built an admin dashboard web application for a DBS Metaverse event using Spring Security and Angular"
+      ]
+    },
+    {
+      "name": "Fiver",
+      "href": "https://www.fiverr.com/search/gigs?query=%20Assistant%20Manager",
+      "title": "Virtual Assistant for hostinger Account (Freelance)",
+      "logo": "/fiver.png",
+      "start": "Aug 2022",
+      "end": "Oct 2023",
+      "description": [
+        "Providing expert Hostinger account management, including domain setup, hosting configuration, WordPress installation, and technical troubleshooting"
+      ]
+    }
+  ]
+}
