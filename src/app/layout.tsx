@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ParticlesBackground from "@/components/ParticlesBackground";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -33,6 +34,7 @@ export default function RootLayout({
         )}
       >
         <Providers>
+          <ParticlesBackground />
           <Header />
           <main className="grow">{children}</main>
           <Footer />
