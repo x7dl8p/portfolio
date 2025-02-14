@@ -27,9 +27,9 @@ export default function Experience() {
 
   return (
     <Tabs defaultValue="work" onValueChange={handleTabChange}>
-      <TabsList className="mb-2 grid w-full grid-cols-2">
-        <TabsTrigger value="work">Work</TabsTrigger>
-        <TabsTrigger value="education">Education</TabsTrigger>
+      <TabsList className="mb-6 grid w-full grid-cols-2">
+        <TabsTrigger value="work" className="text-base">Experience</TabsTrigger>
+        <TabsTrigger value="education" className="text-base">Education</TabsTrigger>
       </TabsList>
       <TabsContent value="work">
         <Timeline experience={career}></Timeline>

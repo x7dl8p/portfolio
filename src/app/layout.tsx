@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "mx-auto flex min-h-screen max-w-3xl flex-col px-8 font-sans antialiased",
+          "flex min-h-screen flex-col font-sans antialiased",
           inter.variable,
           calistoga.variable,
         )}
@@ -40,7 +40,7 @@ export default function RootLayout({
           <ParticlesBackground />
           <NavigationTracker />
           <Header />
-          <main className="grow">{children}</main>
+          <main className="mx-auto w-full max-w-3xl grow px-8">{children}</main>
           <Footer />
           <PointsCounter />
           <CursorDot />

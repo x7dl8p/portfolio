@@ -46,15 +46,15 @@
     --foreground: 0 0% 100%; /* white */
     --card: 0 0% 8%; /* 1% less dark */
     --card-foreground: 0 0% 100%; /* white */
-    --popover: 224 71.4% 4.1%; /* dark blue */
+    --popover: 0 0% 15%; /* light gray */
     --popover-foreground: 0 0% 100%; /* white */
-    --primary: 210 20% 98%; /* very light blue */
+    --primary: 0 0% 90%; /* very light gray */
     --primary-foreground: 0 0% 0%; /* black */
-    --secondary: 215 27.9% 16.9%; /* dark blue */
+    --secondary: 0 0% 20%; /* light gray */
     --secondary-foreground: 0 0% 80%; /* light gray */
     --muted: 0 0% 8%; /* very dark gray */
     --muted-foreground: 0 0% 60%; /* gray */
-    --accent: 215 27.9% 16.9%; /* dark blue */
+    --accent: 0 0% 20%; /* light gray */
     --accent-foreground: 0 0% 100%; /* white */
     --destructive: 0 62.8% 30.6%; /* dark red */
     --destructive-foreground: 0 0% 100%; /* white */
@@ -101,5 +101,31 @@
   }
   .input-error {
     @apply ml-1 mt-2 text-sm text-rose-400;
+  }
+  
+  /* Modern scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-[3px];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-[10px] bg-border/40 transition-colors hover:bg-muted-foreground/30;
+  }
+
+  /* Hide scrollbar buttons in all states */
+  ::-webkit-scrollbar-button:single-button,
+  ::-webkit-scrollbar-button:vertical:decrement,
+  ::-webkit-scrollbar-button:vertical:increment,
+  ::-webkit-scrollbar-button {
+    @apply h-0 w-0 bg-none;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border) / 0.4) transparent;
   }
 }

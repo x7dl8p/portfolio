@@ -23,8 +23,8 @@ export default function CursorDot() {
     <div 
       className={`pointer-events-none fixed left-0 top-0 z-50 h-3 w-3 rounded-full backdrop-blur-sm transition-all duration-300 ease-out ${
         resolvedTheme === 'dark' 
-          ? 'bg-primary/20 mix-blend-difference' 
-          : 'bg-slate-800/40'
+          ? 'bg-gray-100/30' 
+          : 'bg-stone-900/30'
       }`}
       style={{ 
         transform: `translate(${position.x - 6}px, ${position.y - 6}px)`,
