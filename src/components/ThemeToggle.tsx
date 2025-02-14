@@ -1,6 +1,7 @@
 "use client";
 
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { usePoints } from "@/contexts/PointsContext";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/Button";
@@ -8,6 +9,8 @@ import { Button } from "./ui/Button";
 export default function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [hasChangedTheme, setHasChangedTheme] = useState(false);
+  const { addPoints } = usePoints();
 
   useEffect(() => {
     setMounted(true);
@@ -22,7 +25,12 @@ export default function ThemeToggle() {
       size="icon"
       variant="ghost"
       onClick={() => {
-        setTheme(resolvedTheme === "dark" ? "light" : "dark");
+        const newTheme = resolvedTheme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+        if (!hasChangedTheme) {
+          addPoints(7, `Changed theme to ${newTheme} mode`);
+          setHasChangedTheme(true);
+        }
       }}
     >
       {resolvedTheme === "dark" ? (

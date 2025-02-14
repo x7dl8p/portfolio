@@ -1,15 +1,32 @@
+'use client';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import { usePoints } from "@/contexts/PointsContext";
 import careerData from "@/data/career.json";
 import educationData from "@/data/education.json";
 import { careerSchema, educationSchema } from "@/lib/schemas";
+import { useState } from "react";
 import Timeline from "./Timeline";
 
 export default function Experience() {
   const career = careerSchema.parse(careerData).career;
   const education = educationSchema.parse(educationData).education;
+  const { addPoints } = usePoints();
+  const [viewedSections, setViewedSections] = useState(new Set<string>());
+
+  const handleTabChange = (value: string) => {
+    if (!viewedSections.has(value)) {
+      setViewedSections(prev => new Set(prev).add(value));
+      if (value === 'work') {
+        addPoints(10, "Explored work experience");
+      } else if (value === 'education') {
+        addPoints(8, "Checked educational background");
+      }
+    }
+  };
 
   return (
-    <Tabs defaultValue="work">
+    <Tabs defaultValue="work" onValueChange={handleTabChange}>
       <TabsList className="mb-2 grid w-full grid-cols-2">
         <TabsTrigger value="work">Work</TabsTrigger>
         <TabsTrigger value="education">Education</TabsTrigger>

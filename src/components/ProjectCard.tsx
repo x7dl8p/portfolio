@@ -1,3 +1,5 @@
+'use client';
+
 import { Badge } from "@/components/ui/Badge";
 import {
   Card,
@@ -6,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/Card";
+import { usePoints } from "@/contexts/PointsContext";
 import { Project } from "@/lib/schemas";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,12 +21,21 @@ interface Props {
 
 export function ProjectCard({ project }: Props) {
   const { name, href, description, image, tags, links } = project;
+  const { addPoints } = usePoints();
+
+  const handleProjectClick = () => {
+    addPoints(8, `Explored project: ${name}`);
+  };
+
+  const handleLinkClick = (linkName: string) => {
+    addPoints(7, `Checked ${name}'s ${linkName} link`);
+  };
 
   return (
     <Card className="flex flex-col">
       <CardHeader>
         {image && (
-          <Link href={href || image}>
+          <Link href={href || image} onClick={handleProjectClick}>
             <Image
               src={image}
               alt={name}
@@ -57,7 +69,12 @@ export function ProjectCard({ project }: Props) {
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links.toSorted().map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
+              <Link 
+                href={link?.href} 
+                key={idx} 
+                target="_blank" 
+                onClick={() => handleLinkClick(link.name)}
+              >
                 <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
                   <Icon name={link.icon} className="size-3" />
                   {link.name}

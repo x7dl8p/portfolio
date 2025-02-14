@@ -1,6 +1,8 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import NavigationTracker from "@/components/NavigationTracker";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import PointsCounter from "@/components/PointsCounter";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -35,9 +37,11 @@ export default function RootLayout({
       >
         <Providers>
           <ParticlesBackground />
+          <NavigationTracker />
           <Header />
           <main className="grow">{children}</main>
           <Footer />
+          <PointsCounter />
         </Providers>
       </body>
     </html>

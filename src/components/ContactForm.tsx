@@ -2,6 +2,7 @@
 
 import { sendEmail } from "@/lib/actions";
 import { ContactFormSchema } from "@/lib/schemas";
+import { usePoints } from "@/contexts/PointsContext";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PaperPlaneIcon, ReloadIcon } from "@radix-ui/react-icons";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -15,6 +16,7 @@ import Link from "next/link";
 type Inputs = z.infer<typeof ContactFormSchema>;
 
 export default function ContactForm() {
+  const { addPoints } = usePoints();
   const {
     register,
     handleSubmit,
@@ -38,6 +40,7 @@ export default function ContactForm() {
     }
 
     toast.success("Message sent successfully!");
+    addPoints(10, "Sent a contact message");
     reset();
   };
 
