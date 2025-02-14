@@ -1,3 +1,4 @@
+import CursorDot from "@/components/CursorDot";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import NavigationTracker from "@/components/NavigationTracker";
@@ -42,6 +43,7 @@ export default function RootLayout({
           <main className="grow">{children}</main>
           <Footer />
           <PointsCounter />
+          <CursorDot />
         </Providers>
       </body>
     </html>
