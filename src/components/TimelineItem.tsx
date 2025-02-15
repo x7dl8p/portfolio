@@ -13,8 +13,8 @@ export default function TimelineItem({ experience }: Props) {
     experience;
 
   return (
-    <li className="group relative ml-10 py-6 transition-all">
-      <div className="absolute -left-[3.5rem] top-7 h-2 w-2 rounded-full bg-border transition-all group-hover:scale-125 group-hover:bg-primary"></div>
+    <li className="group relative ml-10 py-6 transition-all first:pt-0 last:pb-0">
+      <div className="absolute -left-[3.5rem] top-7 h-3 w-3 rounded-full border-2 border-primary bg-background ring-4 ring-background transition-all group-hover:border-4 group-hover:ring-primary/20"></div>
       <Link
         href={href}
         target="_blank"
@@ -29,7 +29,7 @@ export default function TimelineItem({ experience }: Props) {
           <AvatarFallback className="rounded-lg">{name[0]}</AvatarFallback>
         </Avatar>
       </Link>
-      <div className="flex flex-1 flex-col justify-start gap-2 transition-all group-hover:translate-x-1">
+      <div className="flex flex-1 flex-col justify-start gap-2 transition-all group-hover:translate-x-2">
         {start && (
           <time className="text-xs text-muted-foreground">
             <span>{start}</span>

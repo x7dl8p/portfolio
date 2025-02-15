@@ -27,9 +27,19 @@ export default function Experience() {
 
   return (
     <Tabs defaultValue="work" onValueChange={handleTabChange}>
-      <TabsList className="mb-6 grid w-full grid-cols-2">
-        <TabsTrigger value="work" className="text-base">Experience</TabsTrigger>
-        <TabsTrigger value="education" className="text-base">Education</TabsTrigger>
+      <TabsList className="mb-6 grid w-full grid-cols-2 rounded-xl bg-card/60 backdrop-blur-sm">
+        <TabsTrigger 
+          value="work" 
+          className="text-base relative border-none text-stone-400 rounded-md after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:scale-x-0 after:bg-primary/80 after:transition-transform data-[state=active]:after:scale-x-100"
+        >
+          Experience
+        </TabsTrigger>
+        <TabsTrigger 
+          value="education" 
+          className="text-base relative border-none text-stone-400 rounded-md after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:scale-x-0 after:bg-primary/80 after:transition-transform data-[state=active]:after:scale-x-100"
+        >
+          Education
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="work">
         <Timeline experience={career}></Timeline>
