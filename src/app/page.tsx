@@ -11,7 +11,7 @@ import {
   ArrowRightIcon,
   FileDown
 } from "lucide-react";
-import Image from "next/image";
+import LoadingImage from "@/components/LoadingImage";
 import Link from "next/link";
 import path from "path";
 
@@ -26,13 +26,13 @@ export default async function Home() {
     <article className="mt-8 flex flex-col gap-5 pb-16">
       <section className="flex flex-col items-start gap-8 md:flex-row-reverse md:items-center md:justify-between">
         <div className="flex flex-col items-center gap-4">
-          <Image
-            className="rounded-lg"
+          <LoadingImage
             src="/mohammad.jpg"
-            alt="Photo of Ted"
+            alt="Photo of Mohammad"
             width={175}
             height={175}
-            priority
+            className="rounded-lg"
+            threshold={3000}
           />
           <HireButton />
         </div>
