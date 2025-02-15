@@ -47,13 +47,13 @@ export default async function Home() {
             -year-old <s>Frontend</s> Full-Stack developer from Earth.
           </p>
           <p className="mt-1 font-light">
-          In the realm of ideas, I sculpt digital realities, each line of code a bridge to{" "}
+          Perfection belongs to the God, for a human I am, I can only make the code{" "}
             <Link
               href="https://stackoverflow.com/"
               target="_blank"
               className="link font-semibold"
             >
-              enlightenment.
+              Work.
             </Link>
           </p>
           <div className="mt-4 flex items-end gap-1">
